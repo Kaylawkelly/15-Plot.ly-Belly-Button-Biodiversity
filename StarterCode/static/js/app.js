@@ -3,7 +3,7 @@ function buildMetadata(sample) {
     // metadata 
   
    
-    var metadataURL = `/metadata/${sample}`;
+    var metadataURL = `/data/${sample}`;
       d3.json(metadataURL).then(function(sample){
         var sampleData = d3.select(`#sample-metadata`);
         sampleData.html("");

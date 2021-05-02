@@ -47,17 +47,56 @@ function buildMetadata(sample) {
 
         var OTU_ids = result.otu_ids;
         var OTU_labels = result.otu_labels;
-        var samplevaules = result.sample_values;
+        var samplevalue = result.sample_values;
 
      // Barchart / horizontal 
      
         var barchart = [{
           y: OTU_ids.slice(0,10).map(otu_ids=>`OTU ${otu_ids}`).reverse(),
-          x: samplevaules.slice(0,10).reverse(),
+          x: samplevalue.slice(0,10).reverse(),
           text: OTU_labels.slice(0,10).reverse(),
           type: "bar",
           orientation:"h"
         }];
-        Plotly.newPlot('bar',barchart);
+
+        var barlayout = {
+            title : "Top 10 Bacteria Cultures Found"
+           }
+
+        Plotly.newPlot('bar',barchart,barlayout);
+
+
+
+        //Bubble Chart
+
+        var bubbledata = [{
+          x: OTU_ids, 
+          y: samplevalue,
+          text: OTU_labels,
+          mode:"markers",
+          marker: {
+              size: samplevalue,
+              color: OTU_ids,
+              colorscale: "Earth"
+          }
+
+            
+        }];
+
+        var bubblelayout = {
+            title : "Bacteria Culture Per Sample",
+            xaxis: {
+                title:"OTU ID"}
+        }
+       
+
+        Plotly.newPlot('bubble',bubbledata,bubblelayout)
+
+
+
+
+
+
     });}
 
+    //

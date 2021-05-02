@@ -1,6 +1,6 @@
 function buildMetadata(sample) {
 
-    // builds the metadata 
+    // metadata 
   
    
     var metadataURL = `/metadata/${sample}`;
@@ -13,3 +13,6 @@ function buildMetadata(sample) {
         })
       });
   }
+  function buildCharts(sample) {
+    // Use `d3.json` to get data
+    var plotData = `/samples/${sample}`;

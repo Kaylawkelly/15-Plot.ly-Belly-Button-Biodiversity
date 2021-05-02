@@ -30,3 +30,4 @@ function buildMetadata(sample) {
           type: "bar"
         }];
         Plotly.newPlot('bar',barchart);
+    });

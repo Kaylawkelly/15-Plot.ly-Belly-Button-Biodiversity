@@ -8,30 +8,31 @@ function dropdown(){
             .text(sampleid)
             .property("value",sampleid)
         })
-
+        var sample1 = id[0];
+        buildMetadata(sample1);
     })
 }
 
 dropdown()
 
 
+function buildMetadata(sample) {
 
-
-
-// function buildMetadata(sample) {
-
-//     // metadata 
-  
+    // metadata 
    
-//       d3.json("samples.json").then(function(sample){
-//         var sampleData = d3.select(`#sample`);
-//         sampleData.html("");
-//         Object.entries(sample).forEach(function([key,value]){
-//           var row = sampleData.append("p");
-//           row.text(`${key}:${value}`)
-//         })
-//       });
-//   }
+      d3.json("samples.json").then(function(data){
+        var metadata = data.metadata;
+        var filterdata = metadata.filter(sampleobject => sampleobject.id==sample);
+        var result = filterdata[0];
+        var sampleData = d3.select("#sample-metadata");
+        sampleData.html("");
+        Object.entries(result).forEach(function([key,value]){
+          var row = sampleData.append("p");
+          row.text(`${key}:${value}`)
+        })
+      });
+  }
+
 //   function buildCharts(sample) {
 //     // Use d3.json to get data
 //     var plotData = `/data/${sample}`;

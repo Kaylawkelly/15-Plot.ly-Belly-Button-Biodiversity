@@ -14,5 +14,22 @@ function buildMetadata(sample) {
       });
   }
   function buildCharts(sample) {
-    // Use `d3.json` to get data
+    // Use d3.json to get data
     var plotData = `/samples/${sample}`;
+
+     // Barchart / horizontal 
+     d3.json(plotData).then(function(data){
+        var values = data.sample_values.slice(0,10);
+        var labels = data.otu_ids.slice(0,10);
+        var display = data.otu_labels.slice(0,10);
+  
+        var barchart = [{
+          values: values,
+          lables: labels,
+          hovertext: display,
+          type: "bar"
+        }];
+        Plotly.newPlot('bare',barchart);
+      });
+    });
+  };

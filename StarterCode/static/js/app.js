@@ -5,7 +5,7 @@ function buildMetadata(sample) {
    
     var metadataURL = `/data/${sample}`;
       d3.json(metadataURL).then(function(sample){
-        var sampleData = d3.select(`#sample-metadata`);
+        var sampleData = d3.select(`#sample`);
         sampleData.html("");
         Object.entries(sample).forEach(function([key,value]){
           var row = sampleData.append("p");

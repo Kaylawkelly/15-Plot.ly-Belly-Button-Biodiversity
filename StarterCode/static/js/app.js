@@ -15,6 +15,9 @@ function dropdown(){
 
 dropdown()
 
+function optionChanged(newsample){
+buildMetadata(newsample);
+}
 
 function buildMetadata(sample) {
 
@@ -33,21 +36,25 @@ function buildMetadata(sample) {
       });
   }
 
-//   function buildCharts(sample) {
-//     // Use d3.json to get data
-//     var plotData = `/data/${sample}`;
+  function buildCharts(sample) {
+    // Use d3.json to get data
+    d3.json("samples.json").then(function(data){
+        var metadata = data.samples;
+        var filterdata = metadata.filter(sampleobject => sampleobject.id==sample);
+        var result = filterdata[0];
 
-//      // Barchart / horizontal 
-//      d3.json(plotData).then(function(data){
-//         var values = data.sample_values.slice(0,10);
-//         var labels = data.otu_ids.slice(0,10);
-//         var display = data.otu_labels.slice(0,10);
-  
-//         var barchart = [{
-//           values: values,
-//           lables: labels,
-//           hovertext: display,
-//           type: "bar"
-//         }];
-//         Plotly.newPlot('bar',barchart);
-//     });
+        var OTU_ids = result.otu_ids;
+        var OTU_labels = result.otu_labels;
+        var samplevaules = result.sample_values;
+
+     // Barchart / horizontal 
+     
+        var barchart = [{
+          x: OTU_ids.slice(0,10).reverse(),
+          y: samplevaules.slice(0,10).reverse(),
+          text: OTU_labels.slice(0,10).reverse(),
+          type: "bar",
+          orientation:"h"
+        }];
+        Plotly.newPlot('bar',barchart);
+    });}

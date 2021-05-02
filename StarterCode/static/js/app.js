@@ -15,7 +15,7 @@ function buildMetadata(sample) {
   }
   function buildCharts(sample) {
     // Use d3.json to get data
-    var plotData = `/samples/${sample}`;
+    var plotData = `/data/${sample}`;
 
      // Barchart / horizontal 
      d3.json(plotData).then(function(data){

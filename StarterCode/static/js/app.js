@@ -29,7 +29,4 @@ function buildMetadata(sample) {
           hovertext: display,
           type: "bar"
         }];
-        Plotly.newPlot('bare',barchart);
-      });
-    });
-  };
+        Plotly.newPlot('bar',barchart);

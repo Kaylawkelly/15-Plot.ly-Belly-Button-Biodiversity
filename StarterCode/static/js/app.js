@@ -10,6 +10,7 @@ function dropdown(){
         })
         var sample1 = id[0];
         buildMetadata(sample1);
+        buildCharts(sample1);
     })
 }
 
@@ -17,6 +18,7 @@ dropdown()
 
 function optionChanged(newsample){
 buildMetadata(newsample);
+buildCharts(newsample);
 }
 
 function buildMetadata(sample) {
@@ -50,11 +52,12 @@ function buildMetadata(sample) {
      // Barchart / horizontal 
      
         var barchart = [{
-          x: OTU_ids.slice(0,10).reverse(),
-          y: samplevaules.slice(0,10).reverse(),
+          y: OTU_ids.slice(0,10).map(otu_ids=>`OTU ${otu_ids}`).reverse(),
+          x: samplevaules.slice(0,10).reverse(),
           text: OTU_labels.slice(0,10).reverse(),
           type: "bar",
           orientation:"h"
         }];
         Plotly.newPlot('bar',barchart);
     });}
+

@@ -98,7 +98,21 @@ function buildMetadata(sample) {
           domain: {x: [0,1], y: [0,1]},
           value: wfreq,
           type:"indicicator",
-          mode
+          mode:"guage+number"
+          gauge: {
+            axis: { range: [null, 9] },
+            steps: [
+              { range: [0, 250], color: "lightgray" },
+              { range: [250, 400], color: "gray" }
+            ],
+            threshold: {
+              line: { color: "red", width: 4 },
+              thickness: 0.75,
+              value: 490
+            }
+          }
+        }
+      ];
         }]
 
 

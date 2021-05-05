@@ -95,7 +95,10 @@ function buildMetadata(sample) {
       //guage chart
 
         var guagedata = [{
-          domain: {x: [0,1], y: [0,1]}
+          domain: {x: [0,1], y: [0,1]},
+          value: wfreq,
+          type:"indicicator",
+          mode
         }]
 
 

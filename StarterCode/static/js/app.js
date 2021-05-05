@@ -98,12 +98,19 @@ function buildMetadata(sample) {
           domain: {x: [0,1], y: [0,1]},
           value: wfreq,
           type:"indicicator",
-          mode:"guage+number"
+          mode:"guage+number",
           gauge: {
-            axis: { range: [null, 9] },
+            axis: { range: [null, 9], tickwidth: 1, tickcolor: "purple" },
+
             steps: [
-              { range: [0, 250], color: "lightgray" },
-              { range: [250, 400], color: "gray" }
+              { range: [0, 1], color: "lightgray" },
+              { range: [1, 2], color: "gray" },
+              { range: [2, 3], color: "lightgray" },
+              { range: [3, 4], color: "gray" },
+              { range: [4, 5], color: "lightgray" },
+              { range: [5, 6], color: "gray" },
+              { range: [6, 7], color: "lightgray" },
+              { range: [8, 9], color: "gray" },
             ],
             threshold: {
               line: { color: "red", width: 4 },
@@ -113,17 +120,6 @@ function buildMetadata(sample) {
           }
         }
       ];
-        }]
-
-
-
-      
-
-
-
-
-
-
     });}
 
     //

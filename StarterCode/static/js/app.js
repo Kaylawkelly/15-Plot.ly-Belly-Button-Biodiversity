@@ -115,11 +115,13 @@ function buildMetadata(sample) {
             threshold: {
               line: { color: "red", width: 4 },
               thickness: 0.75,
-              value: 490
+              value: 490,
             }
           }
         }
       ];
+      Plotly.newPlot('guage',guagedata)
+
     });}
 
     //

@@ -67,7 +67,7 @@ function buildMetadata(sample) {
 
 
 
-        //Bubble Chart
+      //Bubble Chart
 
         var bubbledata = [{
           x: OTU_ids, 
@@ -91,6 +91,16 @@ function buildMetadata(sample) {
        
 
         Plotly.newPlot('bubble',bubbledata,bubblelayout)
+
+      //guage chart
+
+        var guagedata = [{
+          
+        }]
+
+
+
+      
 
 
 

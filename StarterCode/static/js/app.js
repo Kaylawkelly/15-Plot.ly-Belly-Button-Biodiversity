@@ -19,6 +19,7 @@ dropdown()
 function optionChanged(newsample){
 buildMetadata(newsample);
 buildCharts(newsample);
+gauge_plot(newsample);
 }
 
 function buildMetadata(sample) {

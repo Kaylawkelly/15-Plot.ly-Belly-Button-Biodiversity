@@ -67,7 +67,7 @@ function buildMetadata(sample) {
 
 
 
-      //Bubble Chart
+        //Bubble Chart
 
         var bubbledata = [{
           x: OTU_ids, 
@@ -91,37 +91,6 @@ function buildMetadata(sample) {
        
 
         Plotly.newPlot('bubble',bubbledata,bubblelayout)
-
-      //guage chart
-
-        var guagedata = [{
-          domain: {x: [0,1], y: [0,1]},
-          value: wfreq,
-          type:"indicicator",
-          mode:"guage+number",
-          gauge: {
-            axis: { range: [null, 9], tickwidth: 1, tickcolor: "purple" },
-
-            steps: [
-              { range: [0, 1], color: "lightgray" },
-              { range: [1, 2], color: "gray" },
-              { range: [2, 3], color: "lightgray" },
-              { range: [3, 4], color: "gray" },
-              { range: [4, 5], color: "lightgray" },
-              { range: [5, 6], color: "gray" },
-              { range: [6, 7], color: "lightgray" },
-              { range: [8, 9], color: "gray" },
-            ],
-            threshold: {
-              line: { color: "red", width: 4 },
-              thickness: 0.75,
-              value: 490,
-            }
-          }
-        }
-      ];
-      Plotly.newPlot('guage',guagedata)
-
     });}
 
     //

@@ -1,6 +1,6 @@
 
 
-#To view output select HERE ---->: [Belly Button Biodiversity](https://kaylawkelly.github.io/Plot.ly-Belly-Button-Biodiversity/)
+To view output select HERE ---->: [Belly Button Biodiversity](https://kaylawkelly.github.io/Plot.ly-Belly-Button-Biodiversity/)
 
 
 # Plot.ly Homework - Belly Button Biodiversity

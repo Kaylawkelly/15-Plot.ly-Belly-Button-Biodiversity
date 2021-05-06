@@ -1,9 +1,10 @@
 function gauge_plot(sample){
     d3.json("samples.json").then((data)=>{
-        var metadata = data.samples;
+      //console.log(data)
+        var metadata = data.metadata;
         var filterdata = metadata.filter(sampleobject => sampleobject.id==sample);
         var wfreq = filterdata.wfreq;
-        console.log(wfreq)
+        console.log(typeof(wfreq))
 
         var data = [
             {

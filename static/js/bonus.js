@@ -1,10 +1,4 @@
-function gauge_plot(sample){
-    d3.json("samples.json").then((data)=>{
-      //console.log(data)
-        var metadata = data.metadata;
-        var filterdata = metadata.filter(sampleobject => sampleobject.id==sample);
-        var wfreq = filterdata.wfreq;
-        console.log(typeof(wfreq))
+function gauge_plot(wfreq){
 
         var data = [
             {
@@ -36,6 +30,5 @@ function gauge_plot(sample){
           ];
           var layout = { width: 600, height: 450, margin: { t: 0, b: 0 } };
           Plotly.newPlot('gauge', data, layout); 
-    })
+    }
  
-}

@@ -36,6 +36,7 @@ function buildMetadata(sample) {
           var row = sampleData.append("p");
           row.text(`${key}:${value}`)
         })
+        gauge_plot(result.wfreq)
       });
   }
 
